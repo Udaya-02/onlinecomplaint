@@ -1,0 +1,17 @@
+{
+  "name": "charani-complaint-system",
+  "version": "1.0.0",
+  "description": "Charani College and Hostel Complaint Management System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^18.0.8",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.24.6"
+  }
+}

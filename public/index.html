@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udaya | Complaint Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="#" class="brand" onclick="home(); return false;">
+            <span class="logo">C</span>
+            <span>
+                <strong>UDAYA</strong>
+                <small>College & Hostel Support</small>
+            </span>
+        </a>
+
+        <nav id="nav">
+            <button class="nav-btn" onclick="home()">Home</button>
+            <button class="nav-btn" onclick="showForm('login')">Login</button>
+            <button class="btn btn-gold" onclick="showForm('register')">
+                Get Started
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="message" aria-live="polite"></div>
+
+        <section id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="eyebrow">YOUR VOICE MATTERS</span>
+                    <h1>A better campus<br>starts with you.</h1>
+                    <p>
+                        A simple and reliable platform to report college
+                        and hostel issues, track your complaints and
+                        help make your campus better.
+                    </p>
+                    <button class="btn btn-gold" onclick="startComplaint()">
+                        Submit a Complaint →
+                    </button>
+                </div>
+                <div class="hero-icon">✧</div>
+            </div>
+
+            <div class="feature-grid">
+                <article class="card">
+                    <span class="feature-number">01</span>
+                    <h3>Report an Issue</h3>
+                    <p>Send your concern to the appropriate department.</p>
+                </article>
+                <article class="card">
+                    <span class="feature-number">02</span>
+                    <h3>Track Progress</h3>
+                    <p>Check the current status of your complaint.</p>
+                </article>
+                <article class="card">
+                    <span class="feature-number">03</span>
+                    <h3>Get Resolution</h3>
+                    <p>Follow updates as your issue is addressed.</p>
+                </article>
+            </div>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="eyebrow">CAMPUS SERVICES</span>
+                    <h2>Our Departments</h2>
+                    <p>Choose the right department for your concern.</p>
+                </div>
+                <div id="departments" class="department-grid"></div>
+            </section>
+        </section>
+
+        <section id="auth" class="hidden">
+            <div class="card form-card">
+                <span class="eyebrow">WELCOME TO UDAYA</span>
+                <h2 id="authTitle">Welcome Back</h2>
+                <p class="muted">Access your campus complaint account.</p>
+
+                <form id="authForm">
+                    <div id="nameField" class="hidden">
+                        <label for="name">Full name</label>
+                        <input id="name" name="name" autocomplete="name">
+                    </div>
+
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email"
+                           autocomplete="email" required>
+
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password"
+                           minlength="8" autocomplete="current-password"
+                           required>
+
+                    <button id="authButton" class="btn btn-primary full-width">
+                        Login
+                    </button>
+                </form>
+
+                <p id="authSwitch" class="switch-text"></p>
+                <button class="text-btn" onclick="home()">← Back to Home</button>
+            </div>
+        </section>
+
+        <section id="dashboard" class="hidden">
+            <div class="dashboard-heading">
+                <div>
+                    <span class="eyebrow">YOUR ACCOUNT</span>
+                    <h2 id="welcome">Welcome</h2>
+                    <p class="muted">Manage and track your complaints.</p>
+                </div>
+                <button class="btn btn-outline" onclick="logout()">Logout</button>
+            </div>
+
+            <div class="stats-grid">
+                <article class="card stat-card">
+                    <p>Total Complaints</p>
+                    <strong id="total">0</strong>
+                </article>
+                <article class="card stat-card">
+                    <p>Pending</p>
+                    <strong id="pending">0</strong>
+                </article>
+                <article class="card stat-card">
+                    <p>Resolved</p>
+                    <strong id="resolved">0</strong>
+                </article>
+            </div>
+
+            <section id="submitCard" class="card complaint-form section">
+                <span class="eyebrow">WE'RE HERE TO HELP</span>
+                <h2>Submit a Complaint</h2>
+                <p class="muted">Please provide accurate details about your issue.</p>
+
+                <form id="complaintForm">
+                    <label for="departmentSelect">Department</label>
+                    <select id="departmentSelect" name="department_id" required>
+                        <option value="">Select department</option>
+                    </select>
+
+                    <label for="title">Complaint title</label>
+                    <input id="title" name="title" maxlength="150"
+                           placeholder="e.g. Hostel room fan not working" required>
+
+                    <label for="description">Describe your issue</label>
+                    <textarea id="description" name="description"
+                              placeholder="Explain your problem here..."
+                              required></textarea>
+
+                    <button class="btn btn-primary">Submit Complaint</button>
+                </form>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="eyebrow">COMPLAINT HISTORY</span>
+                    <h2 id="listTitle">My Complaints</h2>
+                </div>
+                <div id="complaintList"></div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <strong>UDAYA</strong>
+        <p>Making campus life better, one complaint at a time.</p>
+        <small>© 2026 udaya Complaint Management System</small>
+    </footer>
+</body>
+</html>
